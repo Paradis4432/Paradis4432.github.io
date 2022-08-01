@@ -18,7 +18,7 @@
 <main>
 
     <!-- todo remake header -->
-    <header style="display: none;">
+    <header style="display: none;" id="headerSticky" class="sticky">
         <div class="container">
             <div class="row">
                 <div class="col-4">
@@ -52,10 +52,21 @@
         </div>
     </header>
 
+    <style>
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: black;
+            z-index: 1000;
+        }
+    </style>
+
+
     <body>
         <p id="loadMainText" class="loadingMainText pl-2">> Loading</p>
 
-        <div id="mainHome" style="display: none; padding-top: 100px;">
+        <div id="mainHome" style="display: none; padding-top: 200px;">
             <div class="whoAmI">
                 <h1 class="consoleTypeMessage">> WhoAmI</h1>
 

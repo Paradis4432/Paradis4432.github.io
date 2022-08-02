@@ -73,7 +73,7 @@
         <p id="loadMainText" class="loadingMainText pl-2">> Loading</p>
 
         <div id="mainHome" style="display: none; padding-top: 200px;">
-            <div class="whoAmI">
+            <div class="whoAmI" id="mainSectorHolder">
                 <h1 class="consoleTypeMessage">> WhoAmI</h1>
 
                 <div class="MHMainMnessagePC">
@@ -81,7 +81,7 @@
                     <p class="dataMH">I'm a <span class="auto-type"></span></p>
                     <button type="button" class="btn btn-link" style="color: var(--mainTextGold);">view work</button>
                     <button type="button" class="btn btn-link" style="color: var(--mainTextGold);">hire me</button>
-
+                    <h3 style="color: white;">scroll</h3>
                 </div>
 
                 <div class="MHMainMnessageM">
@@ -90,10 +90,13 @@
                     <p style="color: red;">buttons</p>
                     <button>view work</button>
                     <button>hire me</button>
+                    <h3 style="color: white;">scroll</h3>
+
+
                 </div>
             </div>
 
-            <div class="aboutMe">
+            <div class="aboutMe" id="mainSectorHolder">
                 <h1 class="consoleTypeMessage">> About Me</h1>
 
                 <div class="container">
@@ -112,7 +115,7 @@
                 </div>
             </div>
 
-            <div class="services">
+            <div class="services" id="mainSectorHolder">
                 <h1 class="consoleTypeMessage">> Services</h1>
 
                 <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
@@ -303,7 +306,7 @@
 
             <!-- portfolio -->
 
-            <div class="worksAndEducation">
+            <div class="worksAndEducation" id="mainSectorHolder">
                 <h1 class="consoleTypeMessage">> Works and Education</h1>
 
                 <div class="container">
@@ -362,7 +365,7 @@
                 </div>
             </div>
 
-            <div class="skills">
+            <div class="skills" id="mainSectorHolder">
                 <h1 class="consoleTypeMessage">> Skills</h1>
                 <div class="container">
                     <div class="row">
@@ -423,7 +426,7 @@
 
             </div>
 
-            <div class="contact">
+            <div class="contact" id="mainSectorHolder">
 
                 <h1 class="consoleTypeMessage">> Contact</h1>
 
@@ -487,6 +490,95 @@
         };
 
         var typed = new Typed('.auto-type', options);
+    </script>
+
+    <script>
+        /*
+        let consoleElements = document.querySelectorAll('[class^="consoleTypeMessage"]')
+        consoleElements = Array.from(consoleElements)
+
+        consoleElements.forEach(element => {
+            $(element).parent().css("display", "none")
+            $(element).text("")
+        });
+
+        window.addEventListener("scroll", (event) => toggleMainElements())
+
+        toggleMainElements() // called at first and on scroll event
+        function toggleMainElements() {
+            console.log(consoleElements)
+            consoleElements.forEach(element => {
+                var rect = element.getBoundingClientRect();
+                if (parseInt(rect.y) - window.innerHeight + 20 < 0) {
+                    $(element).parent().css("display", "block")
+
+                    
+                    let oldText = $(element).text()
+
+                    var options = {
+                        strings: [oldText],
+                        typeSpeed: 60
+                    }
+
+                    var type = new Typed(element, options)
+                    consoleElements.splice(consoleElements.indexOf(element), 1)
+                }
+            });
+        }
+        */
+
+        let elements = document.querySelectorAll("[id^='mainSectorHolder']")
+        for (let i = 1; i < elements.length; i++) {
+            const element = elements[i];
+            $(element).css("visibility", "hidden")
+            $(element).attr("loaded", "false");
+        }
+        window.addEventListener("scroll", (event) => toggleSectors());
+
+        function toggleSectors() {
+            let elements = document.querySelectorAll("[id^='mainSectorHolder']")
+            for (let i = 0; i < elements.length; i++) {
+                const element = elements[i];
+                if (isScrolledIntoView(element) && $(element).attr("loaded") == "false") {
+                    let children = $(element).children()[0]
+                    $(children).css("visibility", "visible")
+                    $(element).attr("loaded", "true");
+
+                    let oldText = children.innerText;
+
+                    //$(children).text("a")
+                    children.innerText = ""
+
+                    oldText = oldText.split("")
+                    for (let i = 0; i < oldText.length; i++) {
+                        const lett = oldText[i];
+                        setTimeout(() => {
+                            children.innerText += lett
+
+                        }, i * 100, children, lett);
+                        if (i == oldText.length - 1) {
+                            setTimeout(() => {
+                                console.log("DONE")
+                                $($(element).children()[1]).css("visibility", "visible")
+                            }, i * 100, element, lett);
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+        function isScrolledIntoView(elem) {
+            var docViewTop = $(window).scrollTop();
+            var docViewBottom = docViewTop + $(window).height();
+
+            var elemTop = $(elem).offset().top;
+            var elemBottom = elemTop + $(elem).height();
+
+            return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+        }
+
     </script>
 </main>
 

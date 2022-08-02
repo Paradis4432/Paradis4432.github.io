@@ -23,20 +23,29 @@
                 position: fixed;
                 top: 0;
                 width: 100%;
-                background-color: grey;
+                background-color: black;
                 z-index: 1000;
-                animation: showHeader 2s;
-                animation-fill-mode: forwards;
                 height: 100px;
             }
 
-            @keyframes showHeader {
-                from {
-                    top: -100px;
+            .headerItem {
+                transition: 2s all ease-in-out;
+                position: relative;
+                top: -50px;
+            }
+
+            .movein {
+                animation: moveIn 0.9s 1;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes moveIn {
+                0% {
+                    top: -50px;
                 }
 
-                to {
-                    top: 0px
+                100% {
+                    top: 0px;
                 }
             }
         </style>
@@ -44,7 +53,7 @@
         <div class="container">
             <div class="row mt-3">
                 <div class="col-6 col-lg-4">
-                    <h1 style="color: var(--mainTextGold);">Paradis</h1>
+                    <h1 class="headerItem" style="color: var(--mainTextGold);">Paradis</h1>
                 </div>
 
                 <div class="col-6 col-lg-8">
@@ -54,13 +63,39 @@
                     </div>
 
                     <div class="d-none d-lg-flex justify-content-end mt-2">
-                        <div class="col-lg-auto" style="color: white; font-size: 20px;">whoami</div>
-                        <div class="col-lg-auto" style="color: white; font-size: 20px;">about</div>
-                        <div class="col-lg-auto" style="color: white; font-size: 20px;">services</div>
-                        <div class="col-lg-auto" style="color: white; font-size: 20px;">Work/Education</div>
-                        <div class="col-lg-auto" style="color: white; font-size: 20px;">skills</div>
-                        <div class="col-lg-auto" style="color: white; font-size: 20px;">contact</div>
+                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
+                                href="#whoAmILink">whoami</a></div>
+                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
+                                href="#aboutMeLink">about</a></div>
+                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
+                                href="#servicesLink">services</a></div>
+                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
+                                href="#workEducationLink">Work/Education</a></div>
+                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
+                                href="#skillsLink">skills</a></div>
+                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
+                                href="#contactLink">contact</a></div>
                     </div>
+
+                    <style>
+                        a {
+                            color: white;
+                        }
+                    </style>
+
+                    <script>
+                        var headerItems = document.getElementsByClassName("headerItem")
+                        for (let i = 0; i < headerItems.length; i++) {
+                            const item = headerItems[i];
+                            moveIn(item, i * 200)
+                        }
+
+                        function moveIn(item, delay) {
+                            setTimeout(() => {
+                                item.classList.add("movein")
+                            }, delay)
+                        }
+                    </script>
 
                 </div>
             </div>
@@ -72,9 +107,9 @@
     <body>
         <p id="loadMainText" class="loadingMainText pl-2">> Loading</p>
 
-        <div id="mainHome" style="display: none; padding-top: 200px;">
-            <div class="whoAmI" id="mainSectorHolder">
-                <h1 class="consoleTypeMessage">> WhoAmI</h1>
+        <div id="mainHome" style="display: none; padding-top: 200px;" class="container">
+            <div class="whoAmI sectorItem fadeSectorIn" id="mainSectorHolder">
+                <h1 class="consoleTypeMessage" id="whoAmILink">>WhoAmI</h1>
 
                 <div class="MHMainMnessagePC">
                     <p class="welcomeMH">WELCOME TO MY WEBSITE</p>
@@ -97,7 +132,7 @@
             </div>
 
             <div class="aboutMe" id="mainSectorHolder">
-                <h1 class="consoleTypeMessage">> About Me</h1>
+                <h1 class="consoleTypeMessage" id="aboutMeLink">> About Me</h1>
 
                 <div class="container">
                     <div class="row">
@@ -116,7 +151,7 @@
             </div>
 
             <div class="services" id="mainSectorHolder">
-                <h1 class="consoleTypeMessage">> Services</h1>
+                <h1 class="consoleTypeMessage" id="servicesLink">> Services</h1>
 
                 <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
                     <div class="row">
@@ -307,7 +342,7 @@
             <!-- portfolio -->
 
             <div class="worksAndEducation" id="mainSectorHolder">
-                <h1 class="consoleTypeMessage">> Works and Education</h1>
+                <h1 class="consoleTypeMessage" id="workEducationLink">> Work / Education</h1>
 
                 <div class="container">
                     <div class="col">
@@ -366,7 +401,7 @@
             </div>
 
             <div class="skills" id="mainSectorHolder">
-                <h1 class="consoleTypeMessage">> Skills</h1>
+                <h1 class="consoleTypeMessage" id="skillsLink">> Skills</h1>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-sm-12">
@@ -428,7 +463,7 @@
 
             <div class="contact" id="mainSectorHolder">
 
-                <h1 class="consoleTypeMessage">> Contact</h1>
+                <h1 class="consoleTypeMessage" id="contactLink">> Contact</h1>
 
                 <div class="container">
                     <div class="row">
@@ -436,10 +471,10 @@
                             <input type="text" class="contactInput" placeholder="Name" style="width: 100%;">
                         </div>
                         <div class="col-lg-6 col-sm-12" style="padding-top: 30px;">
-                            <input type="text" class="contactInput" placeholder="Subject" style="width: 100%;">
+                            <input type="text" class="contactInput" placeholder="Email" style="width: 100%;">
                         </div>
                         <div class="col-12" style="padding-top: 30px;">
-                            <input type="text" class="contactInput" placeholder="Email" style="width: 100%;">
+                            <input type="text" class="contactInput" placeholder="Subject" style="width: 100%;">
                         </div>
                         <div class="col-12" style="padding-top: 30px;">
                             <input type="text" class="contactInput" placeholder="Message" style="width: 100%;">
@@ -481,60 +516,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
-    <script>
-        var options = {
-            strings: ['BackEnd Developer', 'Web Developer', 'Data Scienctist'],
-            typeSpeed: 60,
-            backSpeed: 60,
-            loop: true
-        };
 
-        var typed = new Typed('.auto-type', options);
-    </script>
-
-    <script>
-        /*
-        let consoleElements = document.querySelectorAll('[class^="consoleTypeMessage"]')
-        consoleElements = Array.from(consoleElements)
-
-        consoleElements.forEach(element => {
-            $(element).parent().css("display", "none")
-            $(element).text("")
-        });
-
-        window.addEventListener("scroll", (event) => toggleMainElements())
-
-        toggleMainElements() // called at first and on scroll event
-        function toggleMainElements() {
-            console.log(consoleElements)
-            consoleElements.forEach(element => {
-                var rect = element.getBoundingClientRect();
-                if (parseInt(rect.y) - window.innerHeight + 20 < 0) {
-                    $(element).parent().css("display", "block")
-
-                    
-                    let oldText = $(element).text()
-
-                    var options = {
-                        strings: [oldText],
-                        typeSpeed: 60
-                    }
-
-                    var type = new Typed(element, options)
-                    consoleElements.splice(consoleElements.indexOf(element), 1)
-                }
-            });
+    <style>
+        .sectorItem {
+            transition: 2s all ease-in-out;
+            opacity: 0;
         }
-        */
 
+        .fadeSectorIn {
+            animation: fadeIn 0.9s 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
         let elements = document.querySelectorAll("[id^='mainSectorHolder']")
-        for (let i = 1; i < elements.length; i++) {
+        for (let i = 0; i < elements.length; i++) {
             const element = elements[i];
             $(element).css("visibility", "hidden")
             $(element).attr("loaded", "false");
         }
         window.addEventListener("scroll", (event) => toggleSectors());
 
+        setTimeout(() => {
+            toggleSectors()
+        }, 100);
         function toggleSectors() {
             let elements = document.querySelectorAll("[id^='mainSectorHolder']")
             for (let i = 0; i < elements.length; i++) {
@@ -543,6 +558,20 @@
                     let children = $(element).children()[0]
                     $(children).css("visibility", "visible")
                     $(element).attr("loaded", "true");
+
+                    if (i == 0) {
+                        console.log("startring")
+                        setTimeout(() => {
+                            var options = {
+                                strings: ['BackEnd Developer', 'Web Developer', 'Data Scienctist'],
+                                typeSpeed: 60,
+                                backSpeed: 60,
+                                loop: true
+                            };
+
+                            var typed = new Typed('.auto-type', options);
+                        }, 800);
+                    }
 
                     let oldText = children.innerText;
 
@@ -558,8 +587,11 @@
                         }, i * 100, children, lett);
                         if (i == oldText.length - 1) {
                             setTimeout(() => {
-                                console.log("DONE")
-                                $($(element).children()[1]).css("visibility", "visible")
+                                let sectorElement = $(element).children()[1]
+                                $(sectorElement).css("visibility", "visible")
+                                $(sectorElement).addClass("sectorItem")
+                                $(sectorElement).addClass("fadeSectorIn")
+
                             }, i * 100, element, lett);
                         }
                     }

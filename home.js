@@ -30,5 +30,5 @@ $(() => {
 
     $("#loadMainText").toggle()
     $("#mainHome").toggle() 
-    $("header").toggle()
+    //$("header").toggle()
 })

@@ -17,50 +17,56 @@
 
 <main>
 
-    <!-- todo remake header -->
-    <header style="display: none;" id="headerSticky" class="sticky">
+    <header>
+        <style>
+            header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: grey;
+                z-index: 1000;
+                animation: showHeader 2s;
+                animation-fill-mode: forwards;
+                height: 100px;
+            }
+
+            @keyframes showHeader {
+                from {
+                    top: -100px;
+                }
+
+                to {
+                    top: 0px
+                }
+            }
+        </style>
+
         <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <p class="headerParadisText">Paradis</p>
+            <div class="row mt-3">
+                <div class="col-6 col-lg-4">
+                    <h1 style="color: var(--mainTextGold);">Paradis</h1>
                 </div>
 
-                <div class="col headerNavButtonsText">
-                    <p class="subHeaderNavButtonText">whoami</p>
-                </div>
-                <div class="col headerNavButtonsText">
-                    <p class="subHeaderNavButtonText">about</p>
-                </div>
-                <div class="col headerNavButtonsText">
-                    <p class="subHeaderNavButtonText">services</p>
-                </div>
-                <div class="col headerNavButtonsText">
-                    <p class="subHeaderNavButtonText">Work/Education</p>
-                </div>
-                <div class="col headerNavButtonsText">
-                    <p class="subHeaderNavButtonText">skills</p>
-                </div>
-                <div class="col headerNavButtonsText">
-                    <p class="subHeaderNavButtonText">contact</p>
-                </div>
+                <div class="col-6 col-lg-8">
 
-                <div class="col headerNavButtonsIcon">
-                    <p style="color: red;">icon</p>
+                    <div class="d-block d-lg-none">
+                        <h3 class="text-right">BUTTONS</h3>
+                    </div>
+
+                    <div class="d-none d-lg-flex justify-content-end mt-2">
+                        <div class="col-lg-auto" style="color: white; font-size: 20px;">whoami</div>
+                        <div class="col-lg-auto" style="color: white; font-size: 20px;">about</div>
+                        <div class="col-lg-auto" style="color: white; font-size: 20px;">services</div>
+                        <div class="col-lg-auto" style="color: white; font-size: 20px;">Work/Education</div>
+                        <div class="col-lg-auto" style="color: white; font-size: 20px;">skills</div>
+                        <div class="col-lg-auto" style="color: white; font-size: 20px;">contact</div>
+                    </div>
+
                 </div>
             </div>
         </div>
-        </div>
-    </header>
 
-    <style>
-        .sticky {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: black;
-            z-index: 1000;
-        }
-    </style>
+    </header>
 
 
     <body>

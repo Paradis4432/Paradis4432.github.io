@@ -3,6 +3,7 @@
     padding: 0;
     font-family: "oldConsole";
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {

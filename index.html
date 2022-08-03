@@ -544,9 +544,11 @@
     <script>
         let elements = document.querySelectorAll("[id^='mainSectorHolder']")
         for (let i = 0; i < elements.length; i++) {
-            const element = elements[i];
-            $(element).css("visibility", "hidden")
-            $(element).attr("loaded", "false");
+            if (screen.width >= 1024) {
+                const element = elements[i];
+                $(element).css("visibility", "hidden")
+                $(element).attr("loaded", "false");
+            }
         }
 
 
@@ -638,7 +640,7 @@
         var navbarHeight = $('header').outerHeight();
 
         $(window).scroll(function (event) {
-            didScroll = true;
+            if (screen.width >= 1024) didScroll = true;
         });
 
         setInterval(function () {

@@ -7,15 +7,17 @@
 }
 
 :root {
-    --mainTextGold: #FFD700;
+    --mainTextGold: #58d352;
+    --secTextColor: #2c8128;
+    --descColor: #b1b1b1;
 }
 
 body {
-    background-color: #272626;
+    background-color: #000000;
 }
 
 .loadingMainText {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .headerNavButtonsText {

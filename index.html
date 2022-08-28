@@ -77,8 +77,8 @@
                                 class="headerItemButton">whoami</a></div>
                         <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
                                 href="#aboutMeLink" class="headerItemButton">about</a></div>
-                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
-                                href="#skillsLink" class="headerItemButton">skills</a></div>
+                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a href="#skillsLink"
+                                class="headerItemButton">skills</a></div>
                         <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
                                 href="#workEducationLink" class="headerItemButton">Work/Education</a></div>
                         <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
@@ -113,6 +113,17 @@
 
 
     <body>
+        <div class="fadeInParticles" id="particles-js" style="height: 100%; position: fixed;"></div>
+        <script type="text/javascript" src="particles.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+
+        <style>
+            .fadeInParticles {
+                animation: fadeIn 5s 1;
+                animation-fill-mode: forwards;
+            }
+        </style>
+
         <p id="loadMainText" class="loadingMainText pl-2">> Loading</p>
 
         <div id="mainHome" style="display: none; padding-top: 200px;" class="container">
@@ -136,7 +147,9 @@
                             <p style="color: var(--mainTextGold); font-size: 30px;">And I Code</p>
                         </div>
                         <div class="col-12 text-center">
-                            <p style="font-size: 20px;">I'm a software engineer specializing in building and optimizing exceptional digital experiences. Currently, focusing on studying in college a Batchler's Degree in Game Development</p>
+                            <p style="font-size: 20px;">I'm a software engineer specializing in building and optimizing
+                                exceptional digital experiences. Currently, focusing on studying in college a Batchler's
+                                Degree in Game Development</p>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
                             <a href="#contactLink">
@@ -160,7 +173,7 @@
 
             <div class="aboutMe" id="mainSectorHolder">
                 <h1 class="consoleTypeMessage" id="aboutMeLink">> About Me</h1>
-        
+
                 <div class="container">
                     <div class="row">
                         <div class="col d-none d-md-block">
@@ -168,13 +181,18 @@
                         </div>
                         <div class="col">
                             <p class="aboutmeText">Hello! My name is Lucas and i enojy creating things that live on the
-                                internet. My interest in programming started back in 2016 with simple projects in school, turns
-                                out learning the most basic c++ made wonders for my carrer, as it tought me the most esential
+                                internet. My interest in programming started back in 2016 with simple projects in
+                                school, turns
+                                out learning the most basic c++ made wonders for my carrer, as it tought me the most
+                                esential
                                 concepts.</p>
                             <br>
-                            <span class="aboutmeText">Fast-foward to today, and i've had the privilege of studying most of
-                                my life things like </span><span class="aboutmeTextMain"> Data Science, Web Development and
-                                Server Management. </span> <span class="aboutmeText">My main focus these days is building
+                            <span class="aboutmeText">Fast-foward to today, and i've had the privilege of studying most
+                                of
+                                my life things like </span><span class="aboutmeTextMain"> Data Science, Web Development
+                                and
+                                Server Management. </span> <span class="aboutmeText">My main focus these days is
+                                building
                                 optimized, well writen projects.
                             </span>
                             <br>
@@ -190,7 +208,7 @@
                                         </ul>
                                     </div>
                                     <div class="col-12 col-md-6">
-                                        <ul class="aboutmeTextMain"> 
+                                        <ul class="aboutmeTextMain">
                                             <li>Node.js</li>
                                             <li>AWS</li>
                                             <li>Bootstrap</li>
@@ -198,13 +216,13 @@
                                     </div>
                                 </div>
                             </div>
-        
+
                             <style>
                                 .aboutmeText {
                                     color: white;
                                     font-size: 19px;
                                 }
-        
+
                                 .aboutmeTextMain {
                                     color: var(--mainTextGold);
                                     font-size: 19px;
@@ -217,10 +235,10 @@
 
             <div class="skills" id="mainSectorHolder">
                 <h1 class="consoleTypeMessage" id="skillsLink">> Skills</h1>
-        
+
                 <div class="container">
                     <div class="row text-center pt-3">
-        
+
                         <div class="col skillCol"
                             style="border-top-left-radius: 20px; border-bottom-left-radius: 20px;">
                             <h3>Web Developer</h3>
@@ -270,7 +288,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <style>
                     .skillCol {
                         padding-top: 60px;
@@ -278,7 +296,7 @@
                         background-color: grey;
                     }
                 </style>
-        
+
             </div>
 
             <div class="worksAndEducation" id="mainSectorHolder">
@@ -312,7 +330,8 @@
                                 </div>
                                 <div class="col">
                                     <h5 style="color: var(--mainTextGold);">2022</h5>
-                                    <h4 style="color: var(--secTextColor)">Started Batchler's Degree in Game Development</h4>
+                                    <h4 style="color: var(--secTextColor)">Started Batchler's Degree in Game Development
+                                    </h4>
                                     <h5 style="color: var(--descColor)">currently here, studying in UADE</h5>
                                 </div>
                             </div>
@@ -339,7 +358,8 @@
                             </div>
                             <div class="col">
                                 <h5 style="color: var(--mainTextGold);">2022</h5>
-                                <h4 style="color: var(--secTextColor)">Started Batchler's Degree in Game Development</h4>
+                                <h4 style="color: var(--secTextColor)">Started Batchler's Degree in Game Development
+                                </h4>
                                 <h5 style="color: var(--descColor)">currently here, studying in UADE</h5>
                             </div>
                         </div>
@@ -383,7 +403,7 @@
 
     <footer>
         <br><br><br><br><br><br>
-        <h1 style="color: white;">COPY</h1>
+        <h1 style="color: white;">COPY credits to particles js bootstrap jquery ajax</h1>
     </footer>
 
     <script src="home.js"></script>

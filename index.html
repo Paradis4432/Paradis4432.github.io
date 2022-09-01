@@ -237,13 +237,30 @@
                 </div>
             </div>
 
+            <style>
+                :root {
+                    --projectsBackgroundColor: #272727;
+                    --projectsTitleTextColor: rgb(255, 255, 255);
+                    --projectsTextColor: rgb(187, 187, 187);
+                }
+        
+                .projectsBox {
+                    padding: 0px;
+                }
+        
+                .projectsTools {
+                    display: inline-flex;
+                    align-items: flex-end;
+                }
+            </style>
+        
             <div class="projects" id="mainSectorHolder">
                 <h1 class="consoleTypeMessage" id="projectsLink">> projects</h1>
-
+        
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div style="background-color: #21501e; height: 230px; margin: 4px">
+                        <div class="col-12 col-md-6 col-lg-4 projectsBox">
+                            <div style="background-color: var(--projectsBackgroundColor); height: 350px; margin:10px">
                                 <div class="d-flex justify-content-between">
                                     <object data="folder.svg" height="40px" width="40px"
                                         style="margin-left: 15px; margin-top: 10px;"></object>
@@ -251,15 +268,15 @@
                                         style="margin-top: 15px; margin-right: 15px;"></object>
                                 </div>
                                 <div class="col">
-                                    <h3 style="color: white; padding-top: 15px">Personal Website</h3>
-                                    <p style="color: rgb(189, 189, 189);">This single page web app has its own repo.
-                                    <p>
-                                    <p style="color: rgb(189, 189, 189);">Bootstrap HTML CSS</p>
+                                    <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">Personal Website</h3>
+                                    <p style="color: var(--projectsTextColor);">This single page web app has its own repo.</p>
+                                    <p style="color: var(--projectsTextColor);">Bootstrap HTML CSS</p>
                                 </div>
+        
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div style="background-color: #21501e; height: 230px; margin: 4px">
+                        <div class="col-12 col-md-6 col-lg-4 projectsBox">
+                            <div style="background-color: var(--projectsBackgroundColor); height: 350px; margin:10px">
                                 <div class="d-flex justify-content-between">
                                     <object data="folder.svg" height="40px" width="40px"
                                         style="margin-left: 15px; margin-top: 10px;"></object>
@@ -267,15 +284,15 @@
                                         style="margin-top: 15px; margin-right: 15px;"></object>
                                 </div>
                                 <div class="col">
-                                    <h3 style="color: white; padding-top: 15px">BitShop</h3>
-                                    <p style="color: rgb(189, 189, 189);">This is a copy of a website
+                                    <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">BitShop</h3>
+                                    <p style="color: var(--projectsTextColor)">This is a copy of a website
                                         (https://www.mercadolibre.com.ar) made using Node.js</p>
-                                    <p style="color: rgb(189, 189, 189);">Advanced JavaScript, HTML, CSS</p>
+                                    <p style="color: var(--projectsTextColor)">Advanced JavaScript, HTML, CSS</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div style="background-color: #21501e; height: 230px; margin: 4px">
+                        <div class="col-12 col-md-6 col-lg-4 projectsBox">
+                            <div style="background-color: var(--projectsBackgroundColor); height: 350px; margin:10px">
                                 <div class="d-flex justify-content-between">
                                     <object data="folder.svg" height="40px" width="40px"
                                         style="margin-left: 15px; margin-top: 10px;"></object>
@@ -283,15 +300,15 @@
                                         style="margin-top: 15px; margin-right: 15px;"></object>
                                 </div>
                                 <div class="col">
-                                    <h3 style="color: white; padding-top: 15px">Phising Model</h3>
-                                    <p style="color: rgb(189, 189, 189);">Machine learning model made to predict if a
+                                    <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">Phising Model</h3>
+                                    <p style="color: var(--projectsTextColor)">Machine learning model made to predict if a
                                         message is phising that shows results in a friendly website</p>
-                                    <p style="color: rgb(189, 189, 189);">Scikit-learn, Matplotlib, Pandas</p>
+                                    <p style="color: var(--projectsTextColor)">Scikit-learn, Matplotlib, Pandas</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div style="background-color: #21501e; height: 230px; margin: 4px">
+                        <div class="col-12 col-md-6 col-lg-4 projectsBox">
+                            <div style="background-color: var(--projectsBackgroundColor); height: 350px; margin:10px">
                                 <div class="d-flex justify-content-between">
                                     <object data="folder.svg" height="40px" width="40px"
                                         style="margin-left: 15px; margin-top: 10px;"></object>
@@ -299,16 +316,16 @@
                                         style="margin-top: 15px; margin-right: 15px;"></object>
                                 </div>
                                 <div class="col">
-                                    <h3 style="color: white; padding-top: 15px">Infinity Craft</h3>
-                                    <p style="color: rgb(189, 189, 189);">Infinity Craft is a minecraft set of plugins
+                                    <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">Infinity Craft</h3>
+                                    <p style="color: var(--projectsTextColor)">Infinity Craft is a minecraft set of plugins
                                         made with java</p>
-                                    <p style="color: rgb(189, 189, 189);">Server Packages, Java, Async Players</p>
-
+                                    <p style="color: var(--projectsTextColor)">Server Packages, Java, Async Players</p>
+        
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div style="background-color: #21501e; height: 230px; margin: 4px">
+                        <div class="col-12 col-md-6 col-lg-4 projectsBox">
+                            <div style="background-color: var(--projectsBackgroundColor); height: 350px; margin:10px">
                                 <div class="d-flex justify-content-between">
                                     <object data="folder.svg" height="40px" width="40px"
                                         style="margin-left: 15px; margin-top: 10px;"></object>
@@ -316,16 +333,16 @@
                                         style="margin-top: 15px; margin-right: 15px;"></object>
                                 </div>
                                 <div class="col">
-                                    <h3 style="color: white; padding-top: 15px">Pong</h3>
-                                    <p style="color: rgb(189, 189, 189);">This is a copy of the game Atari 1972 which
+                                    <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">Pong</h3>
+                                    <p style="color: var(--projectsTextColor)">This is a copy of the game Atari 1972 which
                                         you can play in different modes. Made entirely on window.</p>
-                                    <p style="color: rgb(189, 189, 189);">SDL, C++, C</p>
-
+                                    <p style="color: var(--projectsTextColor)">SDL, C++, C</p>
+        
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div style="background-color: #21501e; height: 230px; margin: 4px">
+                        <div class="col-12 col-md-6 col-lg-4 projectsBox">
+                            <div style="background-color: var(--projectsBackgroundColor); height: 350px; margin:10px">
                                 <div class="d-flex justify-content-between">
                                     <object data="folder.svg" height="40px" width="40px"
                                         style="margin-left: 15px; margin-top: 10px;"></object>
@@ -333,16 +350,16 @@
                                         style="margin-top: 15px; margin-right: 15px;"></object>
                                 </div>
                                 <div class="col">
-                                    <h3 style="color: white; padding-top: 15px">AutoDefiner</h3>
-                                    <p style="color: rgb(189, 189, 189);">AutoDefiner is an automation tool made for a
+                                    <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">AutoDefiner</h3>
+                                    <p style="color: var(--projectsTextColor)">AutoDefiner is an automation tool made for a
                                         client which makes a repetitive task in just seconds</p>
-                                    <p style="color: rgb(189, 189, 189);">Python, Selenium</p>
+                                    <p style="color: var(--projectsTextColor)">Python, Selenium</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
+        
                 <style>
                     .skillCol {
                         padding-top: 60px;
@@ -350,7 +367,7 @@
                         background-color: grey;
                     }
                 </style>
-
+        
             </div>
 
             <div class="worksAndEducation" id="mainSectorHolder">

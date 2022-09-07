@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "oldConsole";
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --mainTextGold: #58d352;
+    --secTextColor: #2c8128;
+    --descColor: #b1b1b1;
+    --projectsBackgroundColor: #272727;
+    --projectsTitleTextColor: rgb(255, 255, 255);
+    --projectsTextColor: rgb(187, 187, 187);
+    --projectsTextColorTools: #58d352;
+}
+
+body {
+    background-color: #000000;
+}
+
+@font-face {
+    font-family: "oldConsole";
+    src: url("clacon2.ttf");
+}

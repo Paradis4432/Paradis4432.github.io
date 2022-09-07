@@ -1,0 +1,5 @@
+.fadeInParticles {
+    animation: fadeIn 5s 1;
+    animation-fill-mode: forwards;
+}
+

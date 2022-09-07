@@ -1,0 +1,31 @@
+header {
+    background: #131313;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    transition: top 0.4s ease-in-out;
+    width: 100%;
+    z-index: 100;
+}
+
+.headerItem {
+    transition: 2s top ease-in-out;
+    position: relative;
+    top: -50px;
+}
+
+.headerItemButton {
+    color: white;
+    font-size: 20px;
+}
+
+.headerItemButton:hover {
+    color: var(--mainTextGold);
+    text-decoration: none;
+}
+
+.movein {
+    animation: moveIn 0.9s 1;
+    animation-fill-mode: forwards;
+}
+

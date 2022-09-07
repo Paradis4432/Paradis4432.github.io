@@ -1,0 +1,10 @@
+.whoAmIButton {
+    font-size: 15px;
+    height: 50px;
+    width: 150px;
+    background-color: transparent;
+    color: var(--mainTextGold);
+    border-radius: 10px;
+    border-color: var(--mainTextGold);
+}
+

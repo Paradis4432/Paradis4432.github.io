@@ -1,0 +1,18 @@
+.aboutMe{
+    padding-top: 370px;
+}
+
+.aboutmeText {
+    color: white;
+    font-size: 19px;
+}
+
+.aboutmeTextMain {
+    color: var(--mainTextGold);
+    font-size: 19px;
+}
+
+.aboutMeConsole{
+    color: var(--mainTextGold);
+    font-size: 30px;
+}

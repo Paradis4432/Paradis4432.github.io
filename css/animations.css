@@ -1,0 +1,39 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveIn {
+    0% {
+        top: -50px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+
+.fade-in-2{
+    animation: fadeIn 2s 1;
+    animation-fill-mode: forwards;
+}
+
+.fade-in-3{
+    animation: fadeIn 3s 1;
+    animation-fill-mode: forwards;
+}
+
+.fade-in-4{
+    animation: fadeIn 4s 1;
+    animation-fill-mode: forwards;
+}
+
+.fadeInParticles {
+    animation: fadeIn 5s 1;
+    animation-fill-mode: forwards;
+}

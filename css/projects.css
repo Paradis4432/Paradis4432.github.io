@@ -1,0 +1,17 @@
+.projectsBox {
+    padding: 0px;
+}
+
+.projectsTools {
+    display: inline-flex;
+    align-items: flex-end;
+}
+
+.projects{
+    padding-top: 370px;
+}
+
+.projectsConsole{
+    color: var(--mainTextGold);
+    font-size: 30px;
+}

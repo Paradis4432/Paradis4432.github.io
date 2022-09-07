@@ -9,57 +9,34 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/headerCss.css">
+    <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/whoAmI.css">
+    <link rel="stylesheet" href="css/aboutMe.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/worksAndEducation.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <script src="js/animations.js"></script>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
 </head>
 
-<main>
+<body>
+
+    <div class="container-fluid">
+        <div class="d-none d-lg-block">
+            <div class="fadeInParticles" id="particles-js" style="height: 100%; position: fixed;"></div>
+        </div>
+    </div>
+
+
 
     <header class="nav-down">
-        <style>
-            header {
-                background: #131313;
-                height: 100px;
-                position: fixed;
-                top: 0;
-                transition: top 0.4s ease-in-out;
-                width: 100%;
-                z-index: 100;
-            }
-
-            .headerItem {
-                transition: 2s top ease-in-out;
-                position: relative;
-                top: -50px;
-            }
-
-            .headerItem:hover {
-                margin-top: 2px;
-            }
-
-            .headerItemButton:hover {
-                color: var(--mainTextGold);
-                text-decoration: none;
-            }
-
-            .movein {
-                animation: moveIn 0.9s 1;
-                animation-fill-mode: forwards;
-            }
-
-            @keyframes moveIn {
-                0% {
-                    top: -50px;
-                }
-
-                100% {
-                    top: 0px;
-                }
-            }
-        </style>
-
         <div class="container-fluid">
             <div class="row mt-3">
                 <div class="col-6 col-lg-4">
@@ -73,115 +50,73 @@
                     </div>
 
                     <div class="d-none d-lg-flex justify-content-end mt-2">
-                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a href="#whoAmILink"
-                                class="headerItemButton">whoami</a></div>
-                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
-                                href="#aboutMeLink" class="headerItemButton">about</a></div>
-                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
-                                href="#projectsLink" class="headerItemButton">projects</a></div>
-                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
-                                href="#workEducationLink" class="headerItemButton">Work/Education</a></div>
-                        <div class="col-lg-auto headerItem" style="color: white; font-size: 20px;"><a
-                                href="#contactLink" class="headerItemButton">contact</a></div>
+                        <div class="col-lg-auto headerItem">
+                            <a href="#whoAmILink" class="headerItemButton">whoami</a>
+                        </div>
+                        <div class="col-lg-auto headerItem">
+                            <a href="#aboutMeLink" class="headerItemButton">about</a>
+                        </div>
+                        <div class="col-lg-auto headerItem">
+                            <a href="#projectsLink" class="headerItemButton">projects</a>
+                        </div>
+                        <div class="col-lg-auto headerItem">
+                            <a href="#workEducationLink" class="headerItemButton">Work/Education</a>
+                        </div>
+                        <div class="col-lg-auto headerItem">
+                            <a href="#contactLink" class="headerItemButton">contact</a>
+                        </div>
                     </div>
 
-                    <style>
-                        a {
-                            color: white;
-                        }
-                    </style>
-
-                    <script>
-                        var headerItems = document.getElementsByClassName("headerItem")
-                        for (let i = 0; i < headerItems.length; i++) {
-                            const item = headerItems[i];
-                            moveIn(item, i * 200)
-                        }
-
-                        function moveIn(item, delay) {
-                            setTimeout(() => {
-                                item.classList.add("movein")
-                            }, delay)
-                        }
-                    </script>
-
+                    <script src="js/moveInHeaderItems.js"></script>
                 </div>
             </div>
         </div>
 
     </header>
 
-
-    <body>
-        <div class="container-fluid">
-            <div class="d-none d-lg-block">
-                <div class="fadeInParticles" id="particles-js" style="height: 100%; position: fixed;"></div>
-                <script type="text/javascript" src="particles.js"></script>
-                <script type="text/javascript" src="app.js"></script>
-            </div>
-        </div>
-
-        <style>
-            .fadeInParticles {
-                animation: fadeIn 5s 1;
-                animation-fill-mode: forwards;
-            }
-        </style>
-
-        <p id="loadMainText" class="loadingMainText pl-2">> Loading</p>
-
-        <div id="mainHome" style="display: none; padding-top: 200px;" class="container">
-            <div class="whoAmI sectorItem fadeSectorIn" id="mainSectorHolder">
-                <h1 class="consoleTypeMessage" id="whoAmILink" style="display: none;">>WhoAmI</h1>
-
+    <main>
+        <div class="mainHome">
+            <div class="whoAmI">
                 <div class="container">
-                    <div class="row" style="color: white; font-size: 60px;">
-                        <div class="col-3 d-none d-lg-block text-right">
+                    <div class="row" style="color: white; font-size: 60px; padding-top: 260px;">
+                        <div class="col-3 d-none d-lg-block text-right fade-in-2">
                             <p>Hi I'm </p>
                         </div>
                         <div class="col-9 d-block">
                             <div class="d-none d-lg-block">
-                                <p style="color: var(--mainTextGold);"><span class="auto-type"></span></p>
+                                <p style="color: var(--mainTextGold);"><span class="whoAmIAutoType fade-in-2"></span>
+                                </p>
                             </div>
                             <div class="d-block d-lg-none">
                                 <p>Welcome</p>
                             </div>
                         </div>
-                        <div class="col-12 text-center d-none d-lg-block">
+                        <div class="col-12 text-center d-none d-lg-block fade-in-3">
                             <p style="color: var(--mainTextGold); font-size: 30px;">And I Code</p>
                         </div>
-                        <div class="col-12 text-center">
+                        <div class="col-12 text-center fade-in-3">
                             <p style="font-size: 20px;">I'm a software engineer specializing in building and optimizing
                                 exceptional digital experiences. Currently, focusing on studying in college a Bachelor's
                                 Degree in Game Development</p>
                         </div>
-                        <div class="col-12 d-flex justify-content-center">
+                        <div class="col-12 d-flex justify-content-center fade-in-4">
                             <a href="#contactLink">
                                 <input type="button" class="whoAmIButton" value="Lets Talk"></input>
                             </a>
-                            <style>
-                                .whoAmIButton {
-                                    font-size: 15px;
-                                    height: 50px;
-                                    width: 150px;
-                                    background-color: transparent;
-                                    color: var(--mainTextGold);
-                                    border-radius: 10px;
-                                    border-color: var(--mainTextGold);
-                                }
-                            </style>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="aboutMe" id="mainSectorHolder">
-                <h1 class="consoleTypeMessage" id="aboutMeLink">> About Me</h1>
+            <div class="aboutMe">
+                <p class="aboutMeConsole" id="fade-in-partial" sector="aboutme">
+                    <span class="consoleTypeMessageAboutMe" id="aboutMeLink"></span>
+                </p>
 
                 <div class="container">
-                    <div class="row">
+                    <div class="row" id="fade-in-partial">
                         <div class="col d-none d-md-block">
-                            <img src="me.jpg" alt="logo" style="border: 1px solid white; margin-left: 50px;">
+                            <img src="images/me.jpg" alt="logo" style="border: 1px solid white; margin-left: 50px;">
                         </div>
                         <div class="col">
                             <p class="aboutmeText">Hello! My name is Lucas and i enojy creating things that live on the
@@ -220,44 +155,17 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <style>
-                                .aboutmeText {
-                                    color: white;
-                                    font-size: 19px;
-                                }
-
-                                .aboutmeTextMain {
-                                    color: var(--mainTextGold);
-                                    font-size: 19px;
-                                }
-                            </style>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <style>
-                :root {
-                    --projectsBackgroundColor: #272727;
-                    --projectsTitleTextColor: rgb(255, 255, 255);
-                    --projectsTextColor: rgb(187, 187, 187);
-                }
-        
-                .projectsBox {
-                    padding: 0px;
-                }
-        
-                .projectsTools {
-                    display: inline-flex;
-                    align-items: flex-end;
-                }
-            </style>
-        
-            <div class="projects" id="mainSectorHolder">
-                <h1 class="consoleTypeMessage" id="projectsLink">> projects</h1>
-        
-                <div class="container">
+            <div class="projects">
+                <p class="projectsConsole" id="fade-in-partial" sector="projects">
+                    <span class="consoleTypeMessageProjects" id="projectsLink"></span>
+                </p>
+
+                <div class="container" id="fade-in-partial">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-4 projectsBox">
                             <div style="background-color: var(--projectsBackgroundColor); height: 350px; margin:10px">
@@ -268,11 +176,13 @@
                                         style="margin-top: 15px; margin-right: 15px;"></object>
                                 </div>
                                 <div class="col">
-                                    <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">Personal Website</h3>
-                                    <p style="color: var(--projectsTextColor);">Designed, developed and made my very own website to display my projects, past and who i am. Hope you like it!</p>
-                                    <p style="color: var(--projectsTextColor);">Bootstrap HTML CSS</p>
+                                    <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">Personal Website
+                                    </h3>
+                                    <p style="color: var(--projectsTextColor);">Designed, developed and made my very own
+                                        website to display my projects, past and who i am. Hope you like it!</p>
+                                    <p style="color: var(--projectsTextColorTools);">Bootstrap HTML CSS</p>
                                 </div>
-        
+
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 projectsBox">
@@ -287,7 +197,7 @@
                                     <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">BitShop</h3>
                                     <p style="color: var(--projectsTextColor)">This is a copy of a website
                                         (https://www.mercadolibre.com.ar) made using Node.js</p>
-                                    <p style="color: var(--projectsTextColor)">Advanced JavaScript, HTML, CSS</p>
+                                    <p style="color: var(--projectsTextColorTools)">Advanced JavaScript, HTML, CSS</p>
                                 </div>
                             </div>
                         </div>
@@ -300,10 +210,12 @@
                                         style="margin-top: 15px; margin-right: 15px;"></object>
                                 </div>
                                 <div class="col">
-                                    <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">Phising Model</h3>
-                                    <p style="color: var(--projectsTextColor)">Machine learning model made to predict if a
+                                    <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">Phising Model
+                                    </h3>
+                                    <p style="color: var(--projectsTextColor)">Machine learning model made to predict if
+                                        a
                                         message is phising that shows results in a friendly website</p>
-                                    <p style="color: var(--projectsTextColor)">Scikit-learn, Matplotlib, Pandas</p>
+                                    <p style="color: var(--projectsTextColorTools)">Scikit-learn, Matplotlib, Pandas</p>
                                 </div>
                             </div>
                         </div>
@@ -316,11 +228,14 @@
                                         style="margin-top: 15px; margin-right: 15px;"></object>
                                 </div>
                                 <div class="col">
-                                    <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">Infinity Craft</h3>
-                                    <p style="color: var(--projectsTextColor)">Infinity Craft is a minecraft set of plugins
+                                    <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">Infinity Craft
+                                    </h3>
+                                    <p style="color: var(--projectsTextColor)">Infinity Craft is a minecraft set of
+                                        plugins
                                         made with java</p>
-                                    <p style="color: var(--projectsTextColor)">Server Packages, Java, Async Players</p>
-        
+                                    <p style="color: var(--projectsTextColorTools)">Server Packages, Java, Async Players
+                                    </p>
+
                                 </div>
                             </div>
                         </div>
@@ -334,10 +249,11 @@
                                 </div>
                                 <div class="col">
                                     <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">Pong</h3>
-                                    <p style="color: var(--projectsTextColor)">This is a copy of the game Atari 1972 which
+                                    <p style="color: var(--projectsTextColor)">This is a copy of the game Atari 1972
+                                        which
                                         you can play in different modes. Made entirely on window.</p>
-                                    <p style="color: var(--projectsTextColor)">SDL, C++, C</p>
-        
+                                    <p style="color: var(--projectsTextColorTools)">SDL, C++, C</p>
+
                                 </div>
                             </div>
                         </div>
@@ -351,29 +267,22 @@
                                 </div>
                                 <div class="col">
                                     <h3 style="color: var(--projectsTitleTextColor); padding-top: 15px">AutoDefiner</h3>
-                                    <p style="color: var(--projectsTextColor)">AutoDefiner is an automation tool made for a
+                                    <p style="color: var(--projectsTextColor)">AutoDefiner is an automation tool made
+                                        for a
                                         client which makes a repetitive task in just seconds</p>
-                                    <p style="color: var(--projectsTextColor)">Python, Selenium</p>
+                                    <p style="color: var(--projectsTextColorTools)">Python, Selenium</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        
-                <style>
-                    .skillCol {
-                        padding-top: 60px;
-                        height: 450px;
-                        background-color: grey;
-                    }
-                </style>
-        
             </div>
 
-            <div class="worksAndEducation" id="mainSectorHolder">
-                <h1 class="consoleTypeMessage" id="workEducationLink">> Work / Education</h1>
-
-                <div class="container">
+            <div class="worksAndEducation">
+                <p class="workEducationConsole" id="fade-in-partial" sector="workEducation">
+                    <span class="consoleTypeMessageworkEducation" id="workEducationLink"></span>
+                </p>
+                <div class="container" id="fade-in-partial">
                     <div class="col">
                         <div class="workAndEducationPc">
                             <div class="row">
@@ -419,44 +328,15 @@
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="workAndEducationMobile">
-                            <div class="col">
-                                <h5 style="color: var(--mainTextGold);">2021</h5>
-                                <h4 style="color: var(--secTextColor)">Full Stack Web Programming Course</h4>
-                                <h5 style="color: var(--descColor)">made in DigitalHouse,
-                                </h5>
-                            </div>
-                            <div class="col">
-                                <h5 style="color: var(--mainTextGold);">2021</h5>
-                                <h4 style="color: var(--secTextColor)">Data Science Course</h4>
-                                <h5 style="color: var(--descColor)">made in DigitalHouse,
-                                </h5>
-                            </div>
-                            <br>
-                            <div class="col">
-                                <h5 style="color: var(--mainTextGold);">2021</h5>
-                                <h4 style="color: var(--secTextColor)">Started Working In Freelancing</h4>
-                                <h5 style="color: var(--descColor)">here i made a bit of everything, from web
-                                    development to python automation programs</h5>
-                            </div>
-                            <div class="col">
-                                <h5 style="color: var(--mainTextGold);">2022</h5>
-                                <h4 style="color: var(--secTextColor)">Started Batchler's Degree in Game Development
-                                </h4>
-                                <h5 style="color: var(--descColor)">currently here, studying in UADE</h5>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
 
             <div class="contact" id="mainSectorHolder">
 
-                <h1 class="consoleTypeMessage" id="contactLink">> Contact</h1>
-
+                <p class="contactConsole" id="fade-in-partial" sector="contact">
+                    <span class="consoleTypeMessageContact" id="contactLink"></span>
+                </p>
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -485,9 +365,15 @@
                     }
                 </style>
             </div>
-
         </div>
-    </body>
+
+        <script src="js/autoType.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/particles.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </main>
 
     <footer style="padding-top: 200px;">
         <div class="container">
@@ -499,161 +385,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="home.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-
-    <style>
-        .sectorItem {
-            transition: 2s all ease-in-out;
-            opacity: 0;
-        }
-
-        .fadeSectorIn {
-            animation: fadeIn 0.9s 1;
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-    </style>
-    <script>
-        let elements = document.querySelectorAll("[id^='mainSectorHolder']")
-        for (let i = 0; i < elements.length; i++) {
-            if (screen.width >= 1024) {
-                const element = elements[i];
-                $(element).css("visibility", "hidden")
-                $(element).attr("loaded", "false");
-            }
-        }
-
-
-        window.addEventListener("scroll", (event) => {
-            toggleSectors()
-        });
-
-        setTimeout(() => {
-            toggleSectors()
-        }, 100);
-
-        function toggleSectors() {
-            // show elements as user scrolls down 
-            let elements = document.querySelectorAll("[id^='mainSectorHolder']")
-            for (let i = 0; i < elements.length; i++) {
-                const element = elements[i];
-                if (isScrolledIntoView(element) && $(element).attr("loaded") == "false") {
-                    let children = $(element).children()[0]
-                    $(children).css("visibility", "visible")
-                    $(element).attr("loaded", "true");
-
-                    if (i == 0) {
-                        console.log("startring")
-                        setTimeout(() => {
-                            var options = {
-                                strings: ['Paradis', 'a BackEnd Developer', 'a Web Developer', 'a Data Scienctist'],
-                                typeSpeed: 60,
-                                backSpeed: 60,
-                                loop: true
-                            };
-
-                            var typed = new Typed('.auto-type', options);
-                        }, 800);
-                    }
-
-                    let oldText = children.innerText;
-
-                    //$(children).text("a")
-                    children.innerText = ""
-
-                    oldText = oldText.split("")
-                    for (let i = 0; i < oldText.length; i++) {
-                        const lett = oldText[i];
-                        setTimeout(() => {
-                            children.innerText += lett
-
-                        }, i * 100, children, lett);
-                        if (i == oldText.length - 1) {
-                            setTimeout(() => {
-                                let sectorElement = $(element).children()[1]
-                                $(sectorElement).css("visibility", "visible")
-                                $(sectorElement).addClass("sectorItem")
-                                $(sectorElement).addClass("fadeSectorIn")
-
-                            }, i * 100, element, lett);
-                        }
-                    }
-
-                }
-
-            }
-        }
-
-        function isScrolledIntoView(elem) {
-            var docViewTop = $(window).scrollTop();
-            var docViewBottom = docViewTop + $(window).height();
-
-            var elemTop = $(elem).offset().top;
-            var elemBottom = elemTop + $(elem).height();
-
-            return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-        }
-
-    </script>
-
-    <style>
-        .nav-up {
-            top: -100px;
-        }
-    </style>
-
-    <script>
-        var didScroll;
-        var lastScrollTop = 0;
-        var delta = 5;
-        var navbarHeight = $('header').outerHeight();
-
-        $(window).scroll(function (event) {
-            if (screen.width >= 1024) didScroll = true;
-        });
-
-        setInterval(function () {
-            if (didScroll) {
-                hasScrolled();
-                didScroll = false;
-            }
-        }, 100);
-
-        function hasScrolled() {
-            var st = $(this).scrollTop();
-
-            // Make sure they scroll more than delta
-            if (Math.abs(lastScrollTop - st) <= delta)
-                return;
-
-            // If they scrolled down and are past the navbar, add class .nav-up.
-            // This is necessary so you never see what is "behind" the navbar.
-            if (st > lastScrollTop && st > navbarHeight) {
-                // Scroll Down
-                $('header').removeClass('nav-down').addClass('nav-up');
-            } else {
-                // Scroll Up
-                if (st + $(window).height() < $(document).height()) {
-                    $('header').removeClass('nav-up').addClass('nav-down');
-                }
-            }
-
-            lastScrollTop = st;
-        }
-    </script>
-</main>
+</body>
 
 </html>

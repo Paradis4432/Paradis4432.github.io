@@ -2,10 +2,14 @@ header {
     background: #131313;
     height: 100px;
     position: fixed;
-    top: 0;
+    top: 0px;
     transition: top 0.4s ease-in-out;
     width: 100%;
     z-index: 100;
+}
+
+.headerHide{
+    top: -100px
 }
 
 .headerItem {
